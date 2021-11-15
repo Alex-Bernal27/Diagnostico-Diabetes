@@ -1,5 +1,4 @@
 flask
-os
 urllib.request
 json
 pyodbc
