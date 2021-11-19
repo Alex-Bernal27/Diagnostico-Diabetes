@@ -47,7 +47,7 @@ def do_admin_login():
     if account:
         session['logged_in'] = True
     else:
-        flash('wrong password!')
+  
     return home()
 
 
