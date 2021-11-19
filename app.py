@@ -51,7 +51,7 @@ def do_admin_login():
     return home()
 
 
-@app.route('/diagnostico', methods=['GET', 'POST'])
+@app.route('/diagnostico', methods=['POST'])
 def diagnostico():
     diagnostico = request.form
 
