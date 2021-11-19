@@ -13,9 +13,9 @@ def home():
     if not session.get('logged_in'):
         global account
         account = True
-        return render_template('login.html')
+        return render_template('templates/login.html')
     else:
-        return render_template('diagnostico.html')
+        return render_template('templates/diagnostico.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -125,7 +125,7 @@ def diagnostico():
         print(error.info())
         print(json.loads(error.read().decode("utf8", 'ignore')))
     
-    return render_template('response.html',PatientIDResult=result['PatientID'],DiabetesPredictionResult=result['DiabetesPrediction'],ProbabilityResult=result['Probability'])
+    return render_template('templates/response.html',PatientIDResult=result['PatientID'],DiabetesPredictionResult=result['DiabetesPrediction'],ProbabilityResult=result['Probability'])
 
 
 @app.route('/logout')
