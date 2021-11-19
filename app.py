@@ -123,7 +123,7 @@ def diagnostico():
         print(error.info())
         print(json.loads(error.read().decode("utf8", 'ignore')))
     
-    return render_template('templates/response.html',PatientIDResult=result['PatientID'],DiabetesPredictionResult=result['DiabetesPrediction'],ProbabilityResult=result['Probability'])
+    return render_template('response.html',PatientIDResult=result['PatientID'],DiabetesPredictionResult=result['DiabetesPrediction'],ProbabilityResult=result['Probability'])
 
 
 @app.route('/logout')
