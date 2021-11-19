@@ -1,5 +1,3 @@
-from re import A
-from flask import Flask
 from flask import Flask, flash, render_template, request, session
 import os
 import urllib.request
@@ -13,9 +11,9 @@ def home():
     if not session.get('logged_in'):
         global account
         account = True
-        return render_template('templates/login.html')
+        return render_template('login.html')
     else:
-        return render_template('templates/diagnostico.html')
+        return render_template('diagnostico.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
