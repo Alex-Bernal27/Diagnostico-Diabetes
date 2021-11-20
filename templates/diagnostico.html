@@ -1,0 +1,143 @@
+<style>
+   * {
+      box-sizing: border-box;
+   }
+
+   *:focus {
+      outline: none;
+   }
+
+   body {
+      font-family: Arial;
+      background-color: #237ee5;
+      background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(83, 182, 240, 0.534)),
+         url("../static/diabetes.jpg");
+      padding: 50px;
+   }
+
+   .diagnostico {
+      margin: 10px auto;
+      width: 550px;
+   }
+
+   .diagnostico-screen {
+      background-color: #FFF;
+      padding: 10px;
+      border-radius: 2px
+   }
+
+   .app-title {
+      text-align: center;
+      color: #777;
+   }
+
+   .diagnostico-form {
+      text-align: center;
+   }
+
+   .control-group {
+      margin-bottom: 8px;
+   }
+
+   input {
+      text-align: center;
+      background-color: #ECF0F1;
+      border: 2px solid transparent;
+      border-radius: 3px;
+      font-size: 16px;
+      font-weight: 200;
+      padding: 8px 0;
+      width: 500px;
+      transition: border .5s;
+   }
+
+   input:focus {
+      border: 2px solid #3498DB;
+      box-shadow: none;
+   }
+
+   .btn {
+      border: 2px solid transparent;
+      background: #6732e0;
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 10px 0;
+      text-decoration: none;
+      text-shadow: none;
+      border-radius: 3px;
+      box-shadow: none;
+      transition: 0.25s;
+      display: block;
+      width: 500px;
+      margin: 0 auto;
+   }
+
+   .btn:hover {
+      background-color: #61a2f7;;
+   }
+
+   .diagnostico-link {
+      font-size: 12px;
+      color: #444;
+      display: block;
+      margin-top: 12px;
+   }
+</style>
+<title>Diagnostico Diabetes</title>
+{% block body %}
+<form action="/diagnostico" method="POST">
+   <div class="diagnostico">
+      <div class="diagnostico-screen">
+         <div class="app-title">
+            <h1>Ingresa los datos</h1>
+         </div>
+         <div class="diagnostico-form">
+            <div class="control-group">
+               <input type="text" class="diagnostico-field" value="" placeholder="PatientID" name="PatientID">
+               <label class="diagnostico-field-icon fui-id" for="diagnostico-id"></label>
+            </div>
+            <div class="control-group">
+               <input type="text" class="diagnostico-field" value="" placeholder="Pregnancies" name="Pregnancies">
+               <label class="diagnostico-field-icon fui-preg" for="diagnostico-preg"></label>
+            </div>
+            <div class="control-group">
+               <input type="text" class="diagnostico-field" value="" placeholder="PlasmaGlucose" name="PlasmaGlucose">
+               <label class="diagnostico-field-icon fui-plasma" for="diagnostico-plasma"></label>
+            </div>
+            <div class="control-group">
+               <input type="text" class="diagnostico-field" value="" placeholder="DiastolicBloodPressure"
+                  name="DiastolicBloodPressure">
+               <label class="diagnostico-field-icon fui-blood" for="diagnostico-blood"></label>
+            </div>
+            <div class="control-group">
+               <input type="text" class="diagnostico-field" value="" placeholder="TricepsThickness"
+                  name="TricepsThickness">
+               <label class="diagnostico-field-icon fui-triceps" for="diagnostico-triceps"></label>
+            </div>
+            <div class="control-group">
+               <input type="text" class="diagnostico-field" value="" placeholder="SerumInsulin" name="SerumInsulin">
+               <label class="diagnostico-field-icon fui-serum" for="diagnostico-serum"></label>
+            </div>
+            <div class="control-group">
+               <input type="text" class="diagnostico-field" value="" placeholder="BMI" name="BMI">
+               <label class="diagnostico-field-icon fui-bmi" for="diagnostico-bmi"></label>
+            </div>
+            <div class="control-group">
+               <input type="text" class="diagnostico-field" value="" placeholder="DiabetesPedigree"
+                  name="DiabetesPedigree">
+               <label class="diagnostico-field-icon fui-pedigree" for="diagnostico-pedigree"></label>
+            </div>
+            <div class="control-group">
+               <input type="text" class="diagnostico-field" value="" placeholder="Age" name="Age">
+               <label class="diagnostico-field-icon fui-age" for="diagnostico-age"></label>
+            </div>
+            <input type="submit" value="Resultado" class="btn btn-primary btn-large btn-block">
+         </div>
+      </div>
+   </div>
+</form>
+
+
+<center><a href="/logout" role="button">Logout</a></center>
+{% endblock %}
